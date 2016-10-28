@@ -3,15 +3,22 @@
  */
 
 var button_back, button_forward;
+var welcome;
+var header;
+var wrapper;
 
 function init() {
     console.log("Hello world!");
+
+    welcome = document.getElementById("welcome");
+    header = document.getElementById("header");
+    wrapper = document.getElementById("wrapper");
 
     button_back = document.getElementById("button_back");
     button_forward = document.getElementById("button_forward");
 
     var scroll_list = document.getElementById("scroll_list");
-    console.log(scroll_list.scrollWidth - scroll_list.clientWidth);
+    console.log("Scrolling distance available", scroll_list.scrollWidth - scroll_list.clientWidth);
 
 
     button_back.addEventListener("click", function() {
@@ -32,7 +39,7 @@ function scroll(element, distance, direction) {
             button_back.style.display = "block";
         }
 
-        if(element.scrollWidth - element.clientWidth == element.scrollLeft) {
+        if(element.scrollWidth - element.clientWidth <= element.scrollLeft) {
             button_forward.style.display = "none";
         } else {
             button_forward.style.display = "block";
@@ -57,12 +64,25 @@ window.addEventListener('keydown', function (event) {
 });
 
 window.addEventListener("scroll", function(e) {
-    console.log("Scrolling", e);
-    //if(wrapper.scrollTop > 130) {
-    //    header.classList.remove("top");
-    //    header.classList.add("fixed");
-    //} else {
-    //    header.classList.remove("fixed");
-    //    header.classList.add("top");
-    //}
+    //console.log("Scrolling", e);
+    console.log(wrapper.scrollTop,  welcome.offsetHeight - 50);
+    if(window.scrollY > welcome.offsetHeight - 50) {
+        console.log("Add class");
+        header.classList.add("fixed");
+    } else {
+        header.classList.remove("fixed");
+    }
 });
+
+
+//.item{
+//    top : 0%;
+//    position : absolute;
+//    width: 200px;
+//    height : 200px;
+//    transition : transform 0.15s linear, opacity 0.15s;
+//    -webkit-transition : -webkit-transform 0.15s linear, opacity 0.15s
+//}
+//var item = document.getElementById("item");
+//item.style.transform = "translate3d(210px,0,0)";
+//item.style.webkitTransform = "translate3d(210px,0,0)";
