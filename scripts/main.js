@@ -4,8 +4,11 @@
 
 var button_back, button_forward;
 var welcome;
+var navigation_buttons_wrapper;
 var header;
 var wrapper;
+
+var distance_to_add_class;
 
 function init() {
     console.log("Hello world!");
@@ -13,6 +16,11 @@ function init() {
     welcome = document.getElementById("welcome");
     header = document.getElementById("header");
     wrapper = document.getElementById("wrapper");
+
+    navigation_buttons_wrapper = document.getElementById("navigation_buttons_wrapper");
+    console.log("Navigation button wrapper", navigation_buttons_wrapper.offsetTop);
+
+    distance_to_add_class = navigation_buttons_wrapper.offsetTop;
 
     button_back = document.getElementById("button_back");
     button_forward = document.getElementById("button_forward");
@@ -65,12 +73,14 @@ window.addEventListener('keydown', function (event) {
 
 window.addEventListener("scroll", function(e) {
     //console.log("Scrolling", e);
-    console.log(wrapper.scrollTop,  welcome.offsetHeight - 50);
-    if(window.scrollY > welcome.offsetHeight - 50) {
+    console.log(wrapper.scrollTop,  navigation_buttons_wrapper.offsetTop);
+    if(window.scrollY > distance_to_add_class) {
         console.log("Add class");
-        header.classList.add("fixed");
+        navigation_buttons_wrapper.classList.remove("not_fixed");
+        navigation_buttons_wrapper.classList.add("fixed");
     } else {
-        header.classList.remove("fixed");
+        navigation_buttons_wrapper.classList.remove("fixed");
+        navigation_buttons_wrapper.classList.add("not_fixed");
     }
 });
 

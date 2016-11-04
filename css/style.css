@@ -26,11 +26,6 @@ header {
     transition: all 1s;
 }
 
-.fixed {
-    height: 5%;
-    padding: 15px 100px 0;
-}
-
 #wrapper {
     position: absolute;
     width: 100%;
@@ -41,7 +36,64 @@ header {
     position: relative;
     width: 100%;
     height: 40%;
-    background: #dddddd;
+    background: url(assets/img-showcase.jpg) center no-repeat;
+    background-size: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+#navigation_buttons_wrapper {
+    background-color: rgba(50, 50, 50, 0.5);
+    display: flex;
+}
+
+.not_fixed {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 16%;
+    z-index: 100;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 69.18px;
+    z-index: 100;
+}
+
+.navigation_button {
+    position: relative;
+    width: 10%;
+    height: 100%;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4vw;
+    color: white;
+    transition: background-color 0.5s;
+}
+
+.navigation_button:hover {
+    background-color: green;
+}
+
+#user {
+    position: relative;
+    width: 10%;
+    height: 100%;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    transition: background-color 0.5s;
+}
+
+#user:hover {
+    background-color: red;
 }
 
 #content {
@@ -61,7 +113,7 @@ header {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 20;
     display: flex;
     align-items: center;
     pointer-events: none;
