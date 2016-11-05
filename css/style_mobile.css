@@ -8,11 +8,6 @@ html {
     color: #333333;
 }
 
-a:link {
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
 #wrapper {
     position: relative;
     width: 100%;
@@ -22,69 +17,86 @@ a:link {
 #welcome {
     position: relative;
     width: 100%;
-    height: 20vw;
+    height: 50vw;
     background: url(assets/img-showcase.jpg) center no-repeat;
     background-size: 100%;
     display: flex;
     align-items: flex-end;
 }
 
-#nav_bar {
-    background-color: rgb(66, 133, 244);
-}
-
 #navigation_buttons_wrapper {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
-.initial {
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: 3.5vw;
-    z-index: 100;
-}
-
-.fixed {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 3.5vw;
-    z-index: 100;
+    display: none;
 }
 
 #nav_menu {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    background-color: red;
+}
+
+#nav_menu ul {
+    position: absolute;
     display: none;
+}
+
+#nav_menu:hover ul {
+    background: white;
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 400px;
+    margin-top: 45px;
+    padding-top: 20px;
+}
+
+.initial {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 45px;
+    z-index: 100;
 }
 
 .navigation_button {
     position: relative;
     width: 10%;
-    height: 95%;
+    height: 100%;
+    background: blue;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.4vw;
     color: white;
-    border-bottom: 5px solid transparent;
+    border-bottom: 0 solid;
     transition: background-color 0.5s;
 }
 
-.navigation_button:hover {
-    border-bottom: 5px solid white;
+.search_menu {
+    position: fixed;
+    right: 0;
+    height: 45px;
 }
 
-.search {
-    margin-left: auto;
+.navigation_button:hover {
+    background-color: green;
 }
 
 .user {
-    margin-left: 0;
+    position: relative;
+    width: 10%;
+    height: 100%;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    transition: background-color 0.5s;
 }
 
 .user:hover {
+    background-color: red;
 }
 
 #content {
@@ -97,42 +109,11 @@ a:link {
 .scroll_list_wrapper {
     position: relative;
     width: 100%;
-    height: 15vw;
+    height: 42vw;
 }
 
 #buttons {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 20;
-    align-items: center;
-    pointer-events: none;
-}
-
-#button_back {
-    position: absolute;
-    border-radius: 0 200px 200px 0;
     display: none;
-    pointer-events: all;
-}
-
-#button_forward {
-    position: absolute;
-    right: 0;
-    border-radius: 200px 0 0 200px;
-    pointer-events: all;
-}
-
-.button {
-    width: 3vw;
-    height: 6vw;
-    top: 5vw;
-    background: rgba(50, 50, 50, 0.5);
-    transition: background 0.5s;
-}
-
-.button:hover {
-    background: rgba(50, 50, 50, 0.7);
 }
 
 #scroll_list {
@@ -140,14 +121,14 @@ a:link {
     width: 98%;
     height: 100%;
     padding: 5px;
-    overflow: hidden;
+    overflow: scroll;
     display: -webkit-inline-box;
     transition : transform 0.5s ease;
 }
 
 .event_card {
     position: relative;
-    width: 16%;
+    width: 40vw;
     height: 98%;
     background: white;
     left: 1%;
@@ -186,13 +167,6 @@ a:link {
 img {
     position: relative;
     width: 100%;
-}
-
-#map_wrapper {
-    position: relative;
-    width: 100%;
-    height: 60%;
-    margin-top: 5%;
 }
 
 footer {

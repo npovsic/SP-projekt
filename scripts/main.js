@@ -4,9 +4,10 @@
 
 var button_back, button_forward;
 var welcome;
-var navigation_buttons_wrapper;
+var nav_bar;
 var header;
 var wrapper;
+var mq;
 
 var distance_to_add_class;
 
@@ -17,10 +18,10 @@ function init() {
     header = document.getElementById("header");
     wrapper = document.getElementById("wrapper");
 
-    navigation_buttons_wrapper = document.getElementById("navigation_buttons_wrapper");
-    console.log("Navigation button wrapper", navigation_buttons_wrapper.offsetTop);
+    nav_bar = document.getElementById("nav_bar");
+    console.log("Navigation button wrapper", nav_bar.offsetTop);
 
-    distance_to_add_class = navigation_buttons_wrapper.offsetTop;
+    distance_to_add_class = nav_bar.offsetTop;
 
     button_back = document.getElementById("button_back");
     button_forward = document.getElementById("button_forward");
@@ -29,13 +30,37 @@ function init() {
     console.log("Scrolling distance available", scroll_list.scrollWidth - scroll_list.clientWidth);
 
 
-    button_back.addEventListener("click", function() {
-        scroll(scroll_list, 300, "left");
-    });
-    button_forward.addEventListener("click", function() {
-        scroll(scroll_list, 300, "right");
-    });
 
+    // media query event handler
+    if (matchMedia) {
+        var mq = window.matchMedia("only screen and (max-width: 767px)");
+        mq.addListener(WidthChange);
+        WidthChange(mq);
+    }
+}
+
+function WidthChange(mq) {
+    if (mq.matches) {
+        console.log("MOBILE");
+
+        window.onresize = function(event) {
+            //do nothing
+        };
+    } else {
+        console.log("DESKTOP");
+        button_back.addEventListener("click", function() {
+            scroll(scroll_list, 500, "left");
+        });
+        button_forward.addEventListener("click", function() {
+            scroll(scroll_list, 500, "right");
+        });
+        window.addEventListener("scroll", scrollListener);
+
+        window.onresize = function(event) {
+            console.log("CHANGED WIDTH");
+            distance_to_add_class = nav_bar.offsetTop;
+        };
+    }
 }
 
 function scroll(element, distance, direction) {
@@ -54,36 +79,37 @@ function scroll(element, distance, direction) {
         }
     } else {
         if(direction == "left") {
-            element.scrollLeft-=50;
+            element.scrollLeft-=100;
             setTimeout(function() {
-                scroll(element, distance-50, direction);
+                scroll(element, distance-100, direction);
             }, 50);
         } else {
-            element.scrollLeft+=50;
+            element.scrollLeft+=100;
             setTimeout(function() {
-                scroll(element, distance-50, direction);
+                scroll(element, distance-100, direction);
             }, 50);
         }
     }
 }
 
+
+
 window.addEventListener('keydown', function (event) {
     console.log(event.keyCode);
 });
 
-window.addEventListener("scroll", function(e) {
+function scrollListener(e) {
     //console.log("Scrolling", e);
-    console.log(wrapper.scrollTop,  navigation_buttons_wrapper.offsetTop);
+    console.log(wrapper.scrollTop,  nav_bar.offsetTop);
     if(window.scrollY > distance_to_add_class) {
         console.log("Add class");
-        navigation_buttons_wrapper.classList.remove("not_fixed");
-        navigation_buttons_wrapper.classList.add("fixed");
+        nav_bar.classList.remove("not_fixed");
+        nav_bar.classList.add("fixed");
     } else {
-        navigation_buttons_wrapper.classList.remove("fixed");
-        navigation_buttons_wrapper.classList.add("not_fixed");
+        nav_bar.classList.remove("fixed");
+        nav_bar.classList.add("not_fixed");
     }
-});
-
+}
 
 //.item{
 //    top : 0%;
