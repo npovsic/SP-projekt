@@ -4,19 +4,24 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: Arial;
-    color: #333333;
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: #555;
+    background: #f5f7f9;
 }
 
-a:link {
+a {
     text-decoration: none;
     text-transform: uppercase;
+}
+
+h2 {
+    margin: 2% 2% 1% 2%;
+    font-size: 3vw;
 }
 
 #wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
 }
 
 #welcome {
@@ -30,7 +35,8 @@ a:link {
 }
 
 #nav_bar {
-    background-color: rgb(66, 133, 244);
+    box-shadow: 0px 7px 10px -4px gray;
+    transition: background-color 100ms;
 }
 
 #navigation_buttons_wrapper {
@@ -53,6 +59,7 @@ a:link {
     width: 100%;
     height: 3.5vw;
     z-index: 100;
+    background-color: rgb(66, 133, 244);
 }
 
 #nav_menu {
@@ -61,19 +68,23 @@ a:link {
 
 .navigation_button {
     position: relative;
-    width: 10%;
-    height: 95%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.4vw;
     color: white;
-    border-bottom: 5px solid transparent;
-    transition: background-color 0.5s;
+    padding: 0 20px 0 20px;
+    white-space: nowrap;
+    transition: background-color 0.5s, border 0.5s;
+}
+
+a.navigation_button {
+    text-shadow: 2px 2px gray;
 }
 
 .navigation_button:hover {
-    border-bottom: 5px solid white;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .search {
@@ -90,14 +101,14 @@ a:link {
 #content {
     position: relative;
     width: 100%;
-    height: 100%;
     overflow-x: hidden;
 }
 
 .scroll_list_wrapper {
     position: relative;
     width: 100%;
-    height: 15vw;
+    height: 17vw;
+    min-height: 200px;
 }
 
 #buttons {
@@ -126,7 +137,7 @@ a:link {
 .button {
     width: 3vw;
     height: 6vw;
-    top: 5vw;
+    top: 35%;
     background: rgba(50, 50, 50, 0.5);
     transition: background 0.5s;
 }
@@ -141,14 +152,20 @@ a:link {
     height: 100%;
     padding: 5px;
     overflow: hidden;
+
+    /*IE workaround*/
+    display: flex;
+    flex-direction: row;
+
     display: -webkit-inline-box;
     transition : transform 0.5s ease;
 }
 
 .event_card {
     position: relative;
-    width: 16%;
+    width: 17%;
     height: 98%;
+    min-width: 200px;
     background: white;
     left: 1%;
     top: 1%;
@@ -159,10 +176,16 @@ a:link {
     flex-direction: column;
 }
 
+.event_card img {
+    position: relative;
+    width: 100%;
+    height: 40%;
+}
+
 .event_button_wrapper {
     position: relative;
     width: 100%;
-    height: 70%;
+    height: 60%;
     display: flex;
     /* bottom: 0; */
     align-items: flex-end;
@@ -174,6 +197,9 @@ a:link {
     width: 100px;
     height: 40px;
     margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #dddddd;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s;
@@ -183,21 +209,27 @@ a:link {
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
-img {
-    position: relative;
-    width: 100%;
+a.event_button {
+    color: #555;
+    font-weight: bold;
 }
 
 #map_wrapper {
     position: relative;
     width: 100%;
-    height: 60%;
-    margin-top: 5%;
+    height: 40vw;
+    margin-top: 2%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
 }
 
 footer {
     position: relative;
     width: 100%;
-    height: 20%;
-    background-color: black;
+    padding: 1% 0 1% 0;
+    border-top: 2px solid #ddd;
+    text-align: center;
 }

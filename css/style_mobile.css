@@ -4,14 +4,24 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: Arial;
-    color: #333333;
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: #555;
+    background: #f5f7f9;
+}
+
+h2 {
+    margin: 2% 2% 0 2%;
+    font-size: 2em;
+}
+
+a:link {
+    text-decoration: none;
+    text-shadow: none;
 }
 
 #wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
 }
 
 #welcome {
@@ -46,9 +56,27 @@ html {
     position: absolute;
     display: block;
     width: 200px;
-    height: 400px;
+    height: 300px;
     margin-top: 45px;
-    padding-top: 20px;
+    padding: 0;
+    box-shadow: 0px 6px 15px -5px;
+}
+
+#nav_menu ul li {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+}
+
+a.navigation_button_menu {
+    padding: 15px 0;
+    width: 100%;
+}
+
+a.navigation_button_menu:hover {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .initial {
@@ -57,6 +85,16 @@ html {
     width: 100%;
     height: 45px;
     z-index: 100;
+    background-color: rgb(66, 133, 244);
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 45px;
+    z-index: 100;
+    background-color: rgb(66, 133, 244);
 }
 
 .navigation_button {
@@ -102,14 +140,13 @@ html {
 #content {
     position: relative;
     width: 100%;
-    height: 100%;
     overflow-x: hidden;
 }
 
 .scroll_list_wrapper {
     position: relative;
     width: 100%;
-    height: 42vw;
+    height: 60vw;
 }
 
 #buttons {
@@ -128,8 +165,8 @@ html {
 
 .event_card {
     position: relative;
-    width: 40vw;
-    height: 98%;
+    width: 60vw;
+    height: 95%;
     background: white;
     left: 1%;
     top: 1%;
@@ -155,6 +192,9 @@ html {
     width: 100px;
     height: 40px;
     margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #dddddd;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s;
@@ -164,14 +204,26 @@ html {
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
+a.event_button {
+    color: #555;
+    font-weight: bold;
+}
+
 img {
     position: relative;
     width: 100%;
+}
+
+#map_wrapper {
+    position: relative;
+    width: 100%;
+    height: 60vw;
+    margin-top: 5%;
 }
 
 footer {
     position: relative;
     width: 100%;
     height: 20%;
-    background-color: black;
+    border-top: 2px solid #ddd;
 }
