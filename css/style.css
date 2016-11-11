@@ -1,10 +1,11 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
 body,
 html {
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
-    font-family: "Helvetica", "Arial", sans-serif;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     color: #555;
     background: #f5f7f9;
 }
@@ -16,27 +17,37 @@ a {
 
 h2 {
     margin: 2% 2% 1% 2%;
-    font-size: 3vw;
+    font-size: 2vw;
 }
 
 #wrapper {
     position: relative;
     width: 100%;
+    z-index: 20;
+    background: #f5f7f9;
 }
 
 #welcome {
     position: relative;
     width: 100%;
     height: 20vw;
-    background: url(assets/img-showcase.jpg) center no-repeat;
-    background-size: 100%;
     display: flex;
     align-items: flex-end;
+}
+
+#logo_wrapper {
+    position: fixed;
+    width: 100%;
+    height: 20vw;
+    background: url(assets/img-showcase.jpg) center no-repeat;
+    background-size: 100%;
+    top: 0;
 }
 
 #nav_bar {
     box-shadow: 0px 7px 10px -4px gray;
     transition: background-color 100ms;
+    height: 2.5vw;
 }
 
 #navigation_buttons_wrapper {
@@ -49,7 +60,6 @@ h2 {
     position: relative;
     top: 0;
     width: 100%;
-    height: 3.5vw;
     z-index: 100;
 }
 
@@ -57,9 +67,8 @@ h2 {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 3.5vw;
     z-index: 100;
-    background-color: rgb(66, 133, 244);
+    background-color: #ee4b28;
 }
 
 #nav_menu {
@@ -72,20 +81,33 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.4vw;
+    font-size: 0.8vw;
     color: white;
     padding: 0 20px 0 20px;
     white-space: nowrap;
-    transition: background-color 0.5s, border 0.5s;
+    transition: background-color 0.5s, border 0.5s, transform 1s;
 }
 
-a.navigation_button {
-    text-shadow: 2px 2px gray;
+.search_menu {
+    display: none;
+}
+
+.selected {
+    box-shadow: inset 0 -3px 0 white;
 }
 
 .navigation_button:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
+
+/*.navigation_button:active {*/
+    /*background: #ee4b28;*/
+    /*color: #ee4b28;*/
+
+    /*border-radius: 1000vw;*/
+
+    /*transform: scale3d(100, 100, 10);*/
+/*}*/
 
 .search {
     margin-left: auto;
@@ -101,20 +123,29 @@ a.navigation_button {
 #content {
     position: relative;
     width: 100%;
-    overflow-x: hidden;
+}
+
+.info {
+    position: relative;
+    width: 100%;
+    padding-top: 2%;
+    text-align: center;
+}
+
+.info h3 {
 }
 
 .scroll_list_wrapper {
     position: relative;
     width: 100%;
-    height: 17vw;
+    height: 18vw;
     min-height: 200px;
 }
 
 #buttons {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 70%;
     z-index: 20;
     align-items: center;
     pointer-events: none;
@@ -149,7 +180,7 @@ a.navigation_button {
 #scroll_list {
     position: relative;
     width: 98%;
-    height: 100%;
+    height: 70%;
     padding: 5px;
     overflow: hidden;
 
@@ -163,9 +194,9 @@ a.navigation_button {
 
 .event_card {
     position: relative;
-    width: 17%;
+    width: 13%;
     height: 98%;
-    min-width: 200px;
+    min-width: 150px;
     background: white;
     left: 1%;
     top: 1%;
@@ -184,29 +215,45 @@ a.navigation_button {
 
 .event_button_wrapper {
     position: relative;
-    width: 100%;
     height: 60%;
-    display: flex;
-    /* bottom: 0; */
-    align-items: flex-end;
-    justify-content: flex-end;
+    padding: 0 2% 0 2%;
+}
+
+.event_button_wrapper h3 {
+    font-size: 1vw;
+    margin: 4% 2% 4% 2%;
+}
+
+.event_button_wrapper p {
+    font-size: 0.8vw;
+    margin: 2%;
+    word-wrap: break-word;
+    height: 40%;
 }
 
 .event_button {
-    position: relative;
-    width: 100px;
-    height: 40px;
+    position: absolute;
+    width: 30%;
+    height: 15%;
+    min-width: 60px;
+    min-height: 15px;
+    right: 0;
+    bottom: 0;
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 2px;
     background: #dddddd;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s;
+    transition: all 0.3s;
+    font-size: 0.6vw;
 }
 
 .event_button:hover {
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ee4b28;
+    color: white;
 }
 
 a.event_button {
@@ -223,6 +270,31 @@ a.event_button {
 
 #map {
     width: 100%;
+    height: 90%;
+}
+
+/* SEARCH PAGE */
+.search_wrapper {
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+#search_input {
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #aaa;
+    width: 50%;
+    font-size: 2vw;
+}
+
+#search_input:focus {
+    border-bottom: 2px solid #ee4b28;
+}
+
+.search_results_wrapper {
+    position: relative;
+    width: 100%;
     height: 100%;
 }
 
@@ -232,4 +304,5 @@ footer {
     padding: 1% 0 1% 0;
     border-top: 2px solid #ddd;
     text-align: center;
+    background: #f5f7f9;
 }

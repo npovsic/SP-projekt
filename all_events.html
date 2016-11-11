@@ -11,10 +11,10 @@
         <div id="nav_bar" class="fixed">
             <div id="navigation_buttons_wrapper">
                 <a class="navigation_button" href=".">Home</a>
-                <a class="navigation_button" href="all_events.html">All events</a>
+                <a class="navigation_button selected" href="all_events.html">All events</a>
                 <a class="navigation_button" href="add_event.html">Add event</a>
 
-                <a class="navigation_button search" href="add_event.html">Search</a>
+                <a class="navigation_button search" href="search.html">Search</a>
                 <a class="navigation_button user" href="account.html">Account</a>
             </div>
             <div id="nav_menu">
@@ -24,13 +24,32 @@
                     <li><a class="navigation_button_menu" href="account.html">Account</a></li>
                 </ul>
 
-                <a class="navigation_button search_menu" href="add_event.html">Search</a>
+                <a class="navigation_button search_menu" href="search.html">Search</a>
             </div>
         </div>
 
-        <div id="wrapper">
+        <div id="wrapper" style="margin-top: 4%;">
             <div id="content">
-
+                <div id="map_wrapper">
+                    <h2>Map</h2>
+                    <div id="map"></div>
+                    <script>
+                        function initMap() {
+                            var uluru = {lat: -25.363, lng: 131.044};
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 4,
+                                center: uluru
+                            });
+                            var marker = new google.maps.Marker({
+                                position: uluru,
+                                map: map
+                            });
+                        }
+                    </script>
+                    <script async defer
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaZHBjsIM1lZsd3zpSQkZ06FFbzKjGVkA&callback=initMap">
+                    </script>
+                </div>
             </div>
         </div>
 

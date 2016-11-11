@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<link>
+    <link>
     <meta charset="UTF-8">
     <title>Events</title>
     <link rel="stylesheet" href="css/style.css">
@@ -14,7 +14,7 @@
                 <a class="navigation_button" href="all_events.html">All events</a>
                 <a class="navigation_button" href="add_event.html">Add event</a>
 
-                <a class="navigation_button search" href="search.html">Search</a>
+                <a class="navigation_button selected search" href="search.html">Search</a>
                 <a class="navigation_button user" href="account.html">Account</a>
             </div>
             <div id="nav_menu">
@@ -30,7 +30,13 @@
 
         <div id="wrapper" style="margin-top: 4%;">
             <div id="content">
+                <div class="search_wrapper">
+                    <h3>Enter your search query</h3>
+                    <input id="search_input" type="text" name="search_query">
+                </div>
+                <div class="search_results_wrapper">
 
+                </div>
             </div>
         </div>
 

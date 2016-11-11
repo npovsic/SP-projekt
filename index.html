@@ -10,31 +10,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <body onload="init()">
         <div id="welcome">
+            <div id="logo_wrapper">
+            </div>
             <div id="nav_bar" class="initial">
                 <div id="navigation_buttons_wrapper">
-                    <a class="navigation_button" href=".">Home</a>
+                    <!--<a class="navigation_button selected" href=".">Home</a>-->
+                    <a class="navigation_button selected">Home</a>
                     <a class="navigation_button" href="all_events.html">All events</a>
                     <a class="navigation_button" href="add_event.html">Add event</a>
 
-                    <a class="navigation_button search" href="add_event.html">Search</a>
+                    <a class="navigation_button search" href="search.html">Search</a>
                     <a class="navigation_button user" href="account.html">Account</a>
                 </div>
                 <div id="nav_menu">
+                    <div class="hamburger_icon_wrapper">
+                        <span class="hamburger_icon hamburger_icon_top"></span>
+                        <span class="hamburger_icon hamburger_icon_mid"></span>
+                        <span class="hamburger_icon hamburger_icon_bot"></span>
+                    </div>
                     <ul>
                         <li><a class="navigation_button_menu" href="all_events.html">All events</a></li>
                         <li><a class="navigation_button_menu" href="add_event.html">Add event</a></li>
                         <li><a class="navigation_button_menu" href="account.html">Account</a></li>
                     </ul>
-
-                    <a class="navigation_button search_menu" href="add_event.html">Search</a>
                 </div>
+                <a class="navigation_button search_menu" href="search.html">Search</a>
             </div>
         </div>
 
         <div id="wrapper">
             <div id="content">
-                <h2>Featured events</h2>
+                <div class="info">
+                    <h3>Welcome to <span style="color: #ee4b28;">NAME</span>!</h3>
+                    <p>Browse events, search for specific events, or add them.</p>
+                </div>
                 <div class="scroll_list_wrapper">
+                    <h2>Featured events</h2>
                     <div id="buttons">
                         <div id="button_back" class="button"></div>
                         <div id="button_forward" class="button"></div>
@@ -43,86 +54,68 @@
                         <div class="event_card">
                             <img src="css/assets/header-photo.jpg"/>
                             <div class="event_button_wrapper">
+                                <h3>Title</h3>
+                                <p>Short description</p>
                                 <a class="event_button" href="event_details.html">Details</a>
                             </div>
                         </div>
                         <div class="event_card">
                             <img src="css/assets/header-photo.jpg"/>
                             <div class="event_button_wrapper">
+                                <h3>Title</h3>
+                                <p>Short description</p>
                                 <a class="event_button" href="event_details.html">Details</a>
                             </div>
                         </div>
                         <div class="event_card">
                             <img src="css/assets/header-photo.jpg"/>
                             <div class="event_button_wrapper">
+                                <h3>Title</h3>
+                                <p>Short description</p>
                                 <a class="event_button" href="event_details.html">Details</a>
                             </div>
                         </div>
                         <div class="event_card">
                             <img src="css/assets/header-photo.jpg"/>
                             <div class="event_button_wrapper">
+                                <h3>Title</h3>
+                                <p>Short description</p>
                                 <a class="event_button" href="event_details.html">Details</a>
                             </div>
                         </div>
                         <div class="event_card">
                             <img src="css/assets/header-photo.jpg"/>
                             <div class="event_button_wrapper">
+                                <h3>Title</h3>
+                                <p>Short description</p>
                                 <a class="event_button" href="event_details.html">Details</a>
                             </div>
                         </div>
                         <div class="event_card">
                             <img src="css/assets/header-photo.jpg"/>
                             <div class="event_button_wrapper">
+                                <h3>Title</h3>
+                                <p>Short description</p>
                                 <a class="event_button" href="event_details.html">Details</a>
                             </div>
                         </div>
                         <div class="event_card">
                             <img src="css/assets/header-photo.jpg"/>
                             <div class="event_button_wrapper">
+                                <h3>Title</h3>
+                                <p>Short description</p>
                                 <a class="event_button" href="event_details.html">Details</a>
                             </div>
                         </div>
                         <div class="event_card">
                             <img src="css/assets/header-photo.jpg"/>
                             <div class="event_button_wrapper">
-                                <a class="event_button" href="event_details.html">Details</a>
-                            </div>
-                        </div>
-                        <div class="event_card">
-                            <img src="css/assets/header-photo.jpg"/>
-                            <div class="event_button_wrapper">
-                                <a class="event_button" href="event_details.html">Details</a>
-                            </div>
-                        </div>
-                        <div class="event_card">
-                            <img src="css/assets/header-photo.jpg"/>
-                            <div class="event_button_wrapper">
+                                <h3>Title</h3>
+                                <p>Short description</p>
                                 <a class="event_button" href="event_details.html">Details</a>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <h2>Map</h2>
-                <div id="map_wrapper">
-                    <div id="map"></div>
-                    <script>
-                        function initMap() {
-                            var uluru = {lat: -25.363, lng: 131.044};
-                            var map = new google.maps.Map(document.getElementById('map'), {
-                                zoom: 4,
-                                center: uluru
-                            });
-                            var marker = new google.maps.Marker({
-                                position: uluru,
-                                map: map
-                            });
-                        }
-                    </script>
-                    <script async defer
-                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaZHBjsIM1lZsd3zpSQkZ06FFbzKjGVkA&callback=initMap">
-                    </script>
-
                 </div>
             </div>
         </div>

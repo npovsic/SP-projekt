@@ -34,8 +34,16 @@ a:link {
     align-items: flex-end;
 }
 
+#logo_wrapper {
+    height: 50vw;
+}
+
 #navigation_buttons_wrapper {
     display: none;
+}
+
+#nav_bar {
+    height: 45px;
 }
 
 #nav_menu {
@@ -43,7 +51,37 @@ a:link {
     position: absolute;
     width: 50px;
     height: 100%;
-    background-color: red;
+}
+
+.hamburger_icon_wrapper {
+    display: flex;
+    position: relative;
+    width: 40%;
+    height: 30%;
+    margin: 30% auto;
+}
+
+.hamburger_icon {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 13%;
+}
+
+.hamburger_icon_top {
+    align-self: flex-start;
+}
+
+.hamburger_icon_mid {
+    align-self: center;
+}
+
+.hamburger_icon_bot {
+    align-self: flex-end;
+}
+
+#nav_menu:hover {
+    background: rgba(0, 0, 0, 0.1);
 }
 
 #nav_menu ul {
@@ -57,7 +95,7 @@ a:link {
     display: block;
     width: 200px;
     height: 300px;
-    margin-top: 45px;
+    margin: 0;
     padding: 0;
     box-shadow: 0px 6px 15px -5px;
 }
@@ -83,7 +121,6 @@ a.navigation_button_menu:hover {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 45px;
     z-index: 100;
     background-color: rgb(66, 133, 244);
 }
@@ -92,26 +129,12 @@ a.navigation_button_menu:hover {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 45px;
     z-index: 100;
     background-color: rgb(66, 133, 244);
 }
 
-.navigation_button {
-    position: relative;
-    width: 10%;
-    height: 100%;
-    background: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.4vw;
-    color: white;
-    border-bottom: 0 solid;
-    transition: background-color 0.5s;
-}
-
 .search_menu {
+    display: flex;
     position: fixed;
     right: 0;
     height: 45px;
@@ -119,22 +142,6 @@ a.navigation_button_menu:hover {
 
 .navigation_button:hover {
     background-color: green;
-}
-
-.user {
-    position: relative;
-    width: 10%;
-    height: 100%;
-    background: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    transition: background-color 0.5s;
-}
-
-.user:hover {
-    background-color: red;
 }
 
 #content {
@@ -146,7 +153,7 @@ a.navigation_button_menu:hover {
 .scroll_list_wrapper {
     position: relative;
     width: 100%;
-    height: 60vw;
+    height: 75vw;
 }
 
 #buttons {
@@ -156,7 +163,6 @@ a.navigation_button_menu:hover {
 #scroll_list {
     position: relative;
     width: 98%;
-    height: 100%;
     padding: 5px;
     overflow: scroll;
     display: -webkit-inline-box;
@@ -177,31 +183,12 @@ a.navigation_button_menu:hover {
     flex-direction: column;
 }
 
-.event_button_wrapper {
-    position: relative;
-    width: 100%;
-    height: 70%;
-    display: flex;
-    /* bottom: 0; */
-    align-items: flex-end;
-    justify-content: flex-end;
+.event_button_wrapper h3 {
+    font-size: 1.5em;
 }
 
-.event_button {
-    position: relative;
-    width: 100px;
-    height: 40px;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #dddddd;
-    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s;
-}
-
-.event_button:hover {
-    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
+.event_button_wrapper p {
+    font-size: 1em;
 }
 
 a.event_button {
