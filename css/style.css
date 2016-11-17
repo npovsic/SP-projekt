@@ -10,6 +10,11 @@ html {
     background: #f5f7f9;
 }
 
+textarea, input, button, select {
+    font-family: inherit; font-size: inherit;
+    border: none;
+}
+
 a {
     text-decoration: none;
     text-transform: uppercase;
@@ -165,7 +170,7 @@ h2 {
     pointer-events: all;
 }
 
-.button {
+.seek_button {
     width: 3vw;
     height: 6vw;
     top: 35%;
@@ -173,7 +178,7 @@ h2 {
     transition: background 0.5s;
 }
 
-.button:hover {
+.seek_button:hover {
     background: rgba(50, 50, 50, 0.7);
 }
 
@@ -207,10 +212,28 @@ h2 {
     flex-direction: column;
 }
 
-.event_card img {
+.img_wrapper {
     position: relative;
     width: 100%;
     height: 40%;
+    background: #000;
+}
+
+.img_wrapper p {
+    position: absolute;
+    color: white;
+    text-shadow: 2px 2px #000;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 2%;
+    font-size: 1.2vw;
+}
+
+.img_wrapper img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
 }
 
 .event_button_wrapper {
@@ -231,10 +254,8 @@ h2 {
     height: 40%;
 }
 
-.event_button {
-    position: absolute;
-    width: 30%;
-    height: 15%;
+.button {
+    height: 2vw;
     min-width: 60px;
     min-height: 15px;
     right: 0;
@@ -247,18 +268,19 @@ h2 {
     background: #dddddd;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.3s;
-    font-size: 0.6vw;
+    font-size: 0.7em;
+    color: #555;
+    font-weight: bold;
 }
 
-.event_button:hover {
+.button:hover {
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
     background-color: #ee4b28;
     color: white;
 }
 
-a.event_button {
-    color: #555;
-    font-weight: bold;
+.event_button {
+    position: absolute;
 }
 
 #map_wrapper {
@@ -284,8 +306,9 @@ a.event_button {
     border: none;
     background: transparent;
     border-bottom: 2px solid #aaa;
-    width: 50%;
-    font-size: 2vw;
+    width: 35%;
+    padding: 5px 5px 5px 5px;
+    font-size: 1.2em;
 }
 
 #search_input:focus {
@@ -296,6 +319,93 @@ a.event_button {
     position: relative;
     width: 100%;
     height: 100%;
+}
+
+/*ALL EVENTS PAGE*/
+ul#options_menu {
+    position: fixed;
+    width: 15vw;
+    height: 30vw;
+    background: red;
+    margin-left: 2%;
+    padding: 0;
+    list-style: none;
+    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
+ul#options_menu li {
+    background-color: #fff;
+    padding: 5%;
+}
+
+ul#all_events_wrapper {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 5% 25% 0 25%;
+}
+
+ul#event_types {
+    background: green;
+    position: absolute;
+    width: 48%;
+    height: 4vw;
+    margin-left: 26%;
+    margin-right: 26%;
+    padding: 0;
+    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
+ul#all_events_wrapper li {
+    background: white;
+    position: relative;
+    display: flex;
+    width: 96%;
+    height: 10vw;
+    margin: 2%;
+    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
+ul#all_events_wrapper li img {
+    position: relative;
+    width: 25%;
+    height: 100%;
+}
+
+ul#all_events_wrapper li .event_info {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: blue;
+}
+
+/* ADD EVENT PAGE*/
+form#add_event {
+    position: relative;
+    max-width: 37em;
+    margin: 0 auto;
+}
+
+.input_add_event {
+    width: 97%;
+    line-height: 1.5;
+    padding: 1%;
+    font-size: 1em;
+}
+
+#event_desc {
+    width: 97%;
+    height: 10vw;
+    resize: none;
+    padding: 1%;
+    line-height: 1.5;
+    font-size: 1em;
+}
+
+input.create_button {
+    margin: 1% 1% 1% auto;
+    width: 10%;
 }
 
 footer {

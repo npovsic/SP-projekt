@@ -29,27 +29,55 @@
         </div>
 
         <div id="wrapper" style="margin-top: 4%;">
-            <div id="content">
-                <div id="map_wrapper">
-                    <h2>Map</h2>
-                    <div id="map"></div>
-                    <script>
-                        function initMap() {
-                            var uluru = {lat: -25.363, lng: 131.044};
-                            var map = new google.maps.Map(document.getElementById('map'), {
-                                zoom: 4,
-                                center: uluru
-                            });
-                            var marker = new google.maps.Marker({
-                                position: uluru,
-                                map: map
-                            });
-                        }
-                    </script>
-                    <script async defer
-                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaZHBjsIM1lZsd3zpSQkZ06FFbzKjGVkA&callback=initMap">
-                    </script>
-                </div>
+            <div id="content" style="display: flex">
+                <ul id="options_menu">
+                    <li>All events</li>
+                    <li>Calendar</li>
+                    <li>Map</li>
+                </ul>
+                <ul id="event_types"></ul>
+                <ul id="all_events_wrapper">
+                    <li>
+                        <img src="css/assets/img-showcase.jpg"/>
+                        <div class="event_info"></div>
+                    </li>
+                    <li>
+                        <img src="css/assets/img-showcase.jpg"/>
+                        <div class="event_info"></div>
+                    </li>
+                    <li>
+                        <img src="css/assets/img-showcase.jpg"/>
+                        <div class="event_info"></div>
+                    </li>
+                    <li>
+                        <img src="css/assets/img-showcase.jpg"/>
+                        <div class="event_info"></div>
+                    </li>
+                    <li>
+                        <img src="css/assets/img-showcase.jpg"/>
+                        <div class="event_info"></div>
+                    </li>
+                </ul>
+                <!--<div id="map_wrapper">-->
+                    <!--<h2>Map</h2>-->
+                    <!--<div id="map"></div>-->
+                    <!--<script>-->
+                        <!--function initMap() {-->
+                            <!--var uluru = {lat: -25.363, lng: 131.044};-->
+                            <!--var map = new google.maps.Map(document.getElementById('map'), {-->
+                                <!--zoom: 4,-->
+                                <!--center: uluru-->
+                            <!--});-->
+                            <!--var marker = new google.maps.Marker({-->
+                                <!--position: uluru,-->
+                                <!--map: map-->
+                            <!--});-->
+                        <!--}-->
+                    <!--</script>-->
+                    <!--<script async defer-->
+                            <!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaZHBjsIM1lZsd3zpSQkZ06FFbzKjGVkA&callback=initMap">-->
+                    <!--</script>-->
+                <!--</div>-->
             </div>
         </div>
 
