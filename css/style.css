@@ -10,9 +10,27 @@ html {
     background: #f5f7f9;
 }
 
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    top: 0;
+    position: absolute;
+}
+
 textarea, input, button, select {
     font-family: inherit; font-size: inherit;
     border: none;
+}
+
+textarea, input {
+    outline: none;
+    transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+textarea:focus, input:focus {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
 }
 
 a {
@@ -27,9 +45,17 @@ h2 {
 
 #wrapper {
     position: relative;
+    min-height: 100%;
     width: 100%;
     z-index: 20;
     background: #f5f7f9;
+    margin: 0 auto -8em;
+    padding-bottom: 2em;
+}
+
+.nav_bar_margin {
+    margin-top: 4% !important;
+    min-height: 96% !important;
 }
 
 #welcome {
@@ -128,6 +154,7 @@ h2 {
 #content {
     position: relative;
     width: 100%;
+    min-height: 100%;
 }
 
 .info {
@@ -309,6 +336,7 @@ h2 {
     width: 35%;
     padding: 5px 5px 5px 5px;
     font-size: 1.2em;
+    box-shadow: none;
 }
 
 #search_input:focus {
@@ -326,7 +354,6 @@ ul#options_menu {
     position: fixed;
     width: 15vw;
     height: 30vw;
-    background: red;
     margin-left: 2%;
     padding: 0;
     list-style: none;
@@ -347,13 +374,13 @@ ul#all_events_wrapper {
 }
 
 ul#event_types {
-    background: green;
     position: absolute;
     width: 48%;
     height: 4vw;
     margin-left: 26%;
     margin-right: 26%;
     padding: 0;
+    background: #ee4b28;
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -377,7 +404,14 @@ ul#all_events_wrapper li .event_info {
     position: relative;
     height: 100%;
     width: 100%;
-    background: blue;
+}
+
+ul#all_events_wrapper li .event_info h3 {
+    margin-left: 1%;
+}
+
+ul#all_events_wrapper li .event_info p {
+    margin-left: 1%;
 }
 
 /* ADD EVENT PAGE*/
@@ -408,10 +442,23 @@ input.create_button {
     width: 10%;
 }
 
+/* ACCOUNT PAGE*/
+#account_wrapper {
+    position: absolute;
+    width: 76vw;
+    height: 80vh;
+    left: 20%;
+    margin: 1em;
+    background: #fff;
+    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
 footer {
-    position: relative;
+    position: fixed;
+    z-index: 10000;
     width: 100%;
-    padding: 1% 0 1% 0;
+    height: 2em;
+    bottom: 0;
     border-top: 2px solid #ddd;
     text-align: center;
     background: #f5f7f9;
