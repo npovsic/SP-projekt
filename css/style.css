@@ -48,6 +48,11 @@ h2 {
     font-size: 2vw;
 }
 
+.nav_bar_padding {
+    height: 3vw;
+    min-height: 60px;
+}
+
 #wrapper {
     position: relative;
     min-height: 100%;
@@ -58,9 +63,8 @@ h2 {
     padding-bottom: 2em;
 }
 
-.nav_bar_margin {
-    margin-top: 4% !important;
-    min-height: 96% !important;
+.extra_padding {
+    padding-bottom: 10em !important;
 }
 
 #welcome {
@@ -83,13 +87,13 @@ h2 {
 #nav_bar {
     box-shadow: 0px 7px 10px -4px gray;
     transition: background-color 100ms;
-    height: 2.5vw;
 }
 
 #navigation_buttons_wrapper {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 2.5vw;
+    min-height: 40px;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -156,7 +160,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.8vw;
+    font-size: 0.7em;
     color: white;
     padding: 0 20px 0 20px;
     white-space: nowrap;
@@ -201,20 +205,39 @@ h2 {
     min-height: 100%;
 }
 
+/* MAIN PAGE*/
+
 .info {
     position: relative;
     width: 100%;
-    padding-top: 2%;
+    padding-top: 1%;
     text-align: center;
 }
 
 .info h3 {
 }
 
+#video_wrapper {
+}
+
+#video_wrapper h2 {
+    position: absolute;
+    margin-top: 25%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #eee;
+    text-shadow: 1px 1px black;
+}
+
+video#meetup {
+    padding: 1% 0;
+    width: 100%;
+}
+
 .scroll_list_wrapper {
     position: relative;
     width: 100%;
-    height: 18vw;
     min-height: 200px;
 }
 
@@ -243,7 +266,9 @@ h2 {
 
 .seek_button {
     width: 3vw;
+    min-width: 35px;
     height: 6vw;
+    min-height: 70px;
     top: 35%;
     background: rgba(50, 50, 50, 0.5);
     transition: background 0.5s;
@@ -354,7 +379,11 @@ h2 {
 
 .event_button {
     position: absolute;
+    min-width: 60px;
+    min-height: 30px;
 }
+
+/* ALL EVENTS PAGE*/
 
 #map_wrapper {
     position: absolute;
@@ -384,6 +413,7 @@ h2 {
     background: transparent;
     border-bottom: 2px solid #aaa;
     width: 35%;
+    min-width: 400px;
     padding: 5px 5px 5px 5px;
     font-size: 1.2em;
     box-shadow: none;
@@ -433,7 +463,7 @@ ul#options_menu li:hover a {
 ul#all_events_wrapper {
     position: relative;
     width: 100%;
-    min-width: 960px;
+    min-width: 700px;
     list-style: none;
     padding: 0;
     margin: 0 25% 0 25%;
@@ -455,7 +485,7 @@ ul#all_events_wrapper li {
     display: flex;
     width: 96%;
     height: 11vw;
-    min-height: 200px;
+    min-height: 175px;
     margin: 2%;
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
 }
@@ -497,6 +527,7 @@ form#add_event {
 #event_desc {
     width: 97%;
     height: 10vw;
+    min-height: 200px;
     resize: none;
     padding: 1%;
     line-height: 1.5;
@@ -506,6 +537,8 @@ form#add_event {
 input.form_button {
     margin: 1% 1% 1% auto;
     width: 10%;
+    min-width: 60px;
+    min-height: 30px;
 }
 
 /* ACCOUNT PAGE*/
@@ -598,6 +631,15 @@ input.form_button {
 
 
 /* FOOTER */
+#main_page_footer {
+    width: 100%;
+    height: 10em;
+    z-index: 100;
+    position: relative;
+    border-top: 2px solid #ddd;
+    text-align: center;
+}
+
 footer {
     position: fixed;
     z-index: 10000;
@@ -605,6 +647,5 @@ footer {
     height: 2em;
     bottom: 0;
     border-top: 2px solid #ddd;
-    text-align: center;
     background: #f5f7f9;
 }
