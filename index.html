@@ -11,17 +11,24 @@
     <body onload="init()">
         <div id="welcome">
             <div id="logo_wrapper">
+                <canvas id="logo_canvas" height="400"></canvas>
             </div>
             <div id="nav_bar" class="initial">
-                <div id="navigation_buttons_wrapper">
-                    <!--<a class="navigation_button selected" href=".">Home</a>-->
-                    <a class="navigation_button selected">Home</a>
-                    <a class="navigation_button" href="all_events.html">All events</a>
-                    <a class="navigation_button" href="add_event.html">Add event</a>
+                <ul id="navigation_buttons_wrapper">
+                    <li><a class="navigation_button selected" href=".">Home</a></li>
+                    <li><a class="navigation_button" href="all_events.html">All events</a></li>
+                    <li><a class="navigation_button" href="add_event.html">Add event</a></li>
 
-                    <a class="navigation_button search" href="search.html">Search</a>
-                    <a class="navigation_button user" href="account.html">Account</a>
-                </div>
+                    <li class="search"><a class="navigation_button" href="search.html">Search</a></li>
+                    <li class="account_list_item"><a class="navigation_button" href="#login_form">Login</a>
+                        <!--<ul>-->
+                            <!--<li><a href="#login_form">Login details</a></li>-->
+                            <!--<li><a href="all_events_map.html">Edit account</a></li>-->
+                            <!--<li><a href="all_events_map.html">My events</a></li>-->
+                            <!--<li><a href="all_events_map.html">Events history</a></li>-->
+                        <!--</ul>-->
+                    </li>
+                </ul>
                 <div id="nav_menu">
                     <div class="hamburger_icon_wrapper">
                         <span class="hamburger_icon hamburger_icon_top"></span>
@@ -31,7 +38,7 @@
                     <ul>
                         <li><a class="navigation_button_menu" href="all_events.html">All events</a></li>
                         <li><a class="navigation_button_menu" href="add_event.html">Add event</a></li>
-                        <li><a class="navigation_button_menu" href="account.html">Account</a></li>
+                        <li><a class="navigation_button_menu" href="#login_form">Login</a></li>
                     </ul>
                 </div>
                 <a class="navigation_button search_menu" href="search.html">Search</a>
@@ -50,8 +57,8 @@
                         <div id="button_back" class="seek_button"></div>
                         <div id="button_forward" class="seek_button"></div>
                     </div>
-                    <div id="scroll_list">
-                        <div class="event_card">
+                    <ul id="scroll_list">
+                        <li class="event_card">
                             <div class="img_wrapper">
                                 <img src="css/assets/header-photo.jpg"/>
                                 <p>21. NOV</p>
@@ -61,8 +68,8 @@
                                 <p>Short description</p>
                                 <a class="button event_button" href="event_details.html">Details</a>
                             </div>
-                        </div>
-                        <div class="event_card">
+                        </li>
+                        <li class="event_card">
                             <div class="img_wrapper">
                                 <img src="css/assets/header-photo.jpg"/>
                                 <p>21. NOV</p>
@@ -72,8 +79,8 @@
                                 <p>Short description</p>
                                 <a class="button event_button" href="event_details.html">Details</a>
                             </div>
-                        </div>
-                        <div class="event_card">
+                        </li>
+                        <li class="event_card">
                             <div class="img_wrapper">
                                 <img src="css/assets/header-photo.jpg"/>
                                 <p>21. NOV</p>
@@ -83,8 +90,8 @@
                                 <p>Short description</p>
                                 <a class="button event_button" href="event_details.html">Details</a>
                             </div>
-                        </div>
-                        <div class="event_card">
+                        </li>
+                        <li class="event_card">
                             <div class="img_wrapper">
                                 <img src="css/assets/header-photo.jpg"/>
                                 <p>21. NOV</p>
@@ -94,8 +101,8 @@
                                 <p>Short description</p>
                                 <a class="button event_button" href="event_details.html">Details</a>
                             </div>
-                        </div>
-                        <div class="event_card">
+                        </li>
+                        <li class="event_card">
                             <div class="img_wrapper">
                                 <img src="css/assets/header-photo.jpg"/>
                                 <p>21. NOV</p>
@@ -105,8 +112,8 @@
                                 <p>Short description</p>
                                 <a class="button event_button" href="event_details.html">Details</a>
                             </div>
-                        </div>
-                        <div class="event_card">
+                        </li>
+                        <li class="event_card">
                             <div class="img_wrapper">
                                 <img src="css/assets/header-photo.jpg"/>
                                 <p>21. NOV</p>
@@ -116,8 +123,8 @@
                                 <p>Short description</p>
                                 <a class="button event_button" href="event_details.html">Details</a>
                             </div>
-                        </div>
-                        <div class="event_card">
+                        </li>
+                        <li class="event_card">
                             <div class="img_wrapper">
                                 <img src="css/assets/header-photo.jpg"/>
                                 <p>21. NOV</p>
@@ -127,8 +134,8 @@
                                 <p>Short description</p>
                                 <a class="button event_button" href="event_details.html">Details</a>
                             </div>
-                        </div>
-                        <div class="event_card">
+                        </li>
+                        <li class="event_card">
                             <div class="img_wrapper">
                                 <img src="css/assets/header-photo.jpg"/>
                                 <p>21. NOV</p>
@@ -138,8 +145,8 @@
                                 <p>Short description</p>
                                 <a class="button event_button" href="event_details.html">Details</a>
                             </div>
-                        </div>
-                        <div class="event_card">
+                        </li>
+                        <li class="event_card">
                             <div class="img_wrapper">
                                 <img src="css/assets/header-photo.jpg"/>
                                 <p>21. NOV</p>
@@ -149,8 +156,8 @@
                                 <p>Short description</p>
                                 <a class="button event_button" href="event_details.html">Details</a>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="push"></div>
@@ -161,5 +168,18 @@
             <p>Course project</p>
             <p>2016</p>
         </footer>
+
+        <div id="login_form" class="overlay">
+            <div id="login">
+                <a href="#" class="close_login">Close</a>
+                <form>
+                    <label>Username</label>
+                    <input id="username" class="input_class" type="text" name="username">
+                    <label>Password</label>
+                    <input id="password" class="input_class" type="password" name="password">
+                    <input type="submit" value="LOGIN" class="button form_button">
+                </form>
+            </div>
+        </div>
     </body>
 </html>

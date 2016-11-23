@@ -27,6 +27,11 @@ textarea, input, button, select {
 textarea, input {
     outline: none;
     transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    border: 1px solid #eeeeee;
+}
+
+textarea:hover, input:hover {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
 }
 
 textarea:focus, input:focus {
@@ -85,6 +90,45 @@ h2 {
     display: flex;
     width: 100%;
     height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.account_list_item ul {
+    display: none;
+    position: absolute;
+    width: 10vw;
+    margin-left: 2%;
+    right: 0;
+    padding: 0;
+    list-style: none;
+    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
+}
+
+.account_list_item:hover ul {
+    display: block;
+}
+
+.account_list_item ul li {
+    background-color: #fff;
+    padding: 5%;
+    transition: all 0.2s ease;
+}
+
+.account_list_item ul li a {
+    display: block;
+    width: 100%;
+    padding: 5%;
+    color: black;
+}
+
+.account_list_item ul li:hover {
+    background-color: #ee4b28;
+}
+
+.account_list_item ul li:hover a {
+    color: white;
 }
 
 .initial {
@@ -212,13 +256,13 @@ h2 {
 #scroll_list {
     position: relative;
     width: 98%;
-    height: 70%;
     padding: 5px;
     overflow: hidden;
 
     /*IE workaround*/
     display: flex;
-    flex-direction: row;
+    -webkit-flex-flow: row wrap;
+    flex-wrap: wrap;
 
     display: -webkit-inline-box;
     transition : transform 0.5s ease;
@@ -227,7 +271,8 @@ h2 {
 .event_card {
     position: relative;
     width: 13%;
-    height: 98%;
+    height: 12vw;
+    min-height: 150px;
     min-width: 150px;
     background: white;
     left: 1%;
@@ -244,6 +289,7 @@ h2 {
     width: 100%;
     height: 40%;
     background: #000;
+    overflow: hidden;
 }
 
 .img_wrapper p {
@@ -311,15 +357,19 @@ h2 {
 }
 
 #map_wrapper {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    width: 75%;
     height: 40vw;
-    margin-top: 2%;
+    left: 20%;
+    margin-top: 1em;
+    background: #fff;
+    padding: 1%;
+    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
 #map {
     width: 100%;
-    height: 90%;
+    height: 100%;
 }
 
 /* SEARCH PAGE */
@@ -362,23 +412,38 @@ ul#options_menu {
 
 ul#options_menu li {
     background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+ul#options_menu li a {
+    display: block;
+    width: 100%;
     padding: 5%;
+    color: black;
+}
+
+ul#options_menu li:hover {
+    background-color: #ee4b28;
+}
+
+ul#options_menu li:hover a {
+    color: white;
 }
 
 ul#all_events_wrapper {
     position: relative;
     width: 100%;
+    min-width: 960px;
     list-style: none;
     padding: 0;
-    margin: 5% 25% 0 25%;
+    margin: 0 25% 0 25%;
 }
 
 ul#event_types {
-    position: absolute;
-    width: 48%;
+    position: relative;
+    width: 96%;
     height: 4vw;
-    margin-left: 26%;
-    margin-right: 26%;
+    margin: 2%;
     padding: 0;
     background: #ee4b28;
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
@@ -389,7 +454,8 @@ ul#all_events_wrapper li {
     position: relative;
     display: flex;
     width: 96%;
-    height: 10vw;
+    height: 11vw;
+    min-height: 200px;
     margin: 2%;
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
 }
@@ -421,7 +487,7 @@ form#add_event {
     margin: 0 auto;
 }
 
-.input_add_event {
+.input_class {
     width: 97%;
     line-height: 1.5;
     padding: 1%;
@@ -437,7 +503,7 @@ form#add_event {
     font-size: 1em;
 }
 
-input.create_button {
+input.form_button {
     margin: 1% 1% 1% auto;
     width: 10%;
 }
@@ -445,14 +511,93 @@ input.create_button {
 /* ACCOUNT PAGE*/
 #account_wrapper {
     position: absolute;
-    width: 76vw;
+    width: 75vw;
     height: 80vh;
     left: 20%;
     margin: 1em;
+    padding: 1%;
     background: #fff;
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
+#account_wrapper img {
+    position: absolute;
+    width: 20%;
+}
+
+#account_info {
+    position: absolute;
+    left: 25%;
+    height: 100%;
+    width: 75%;
+}
+
+
+/* EVENT DETAILS PAGE*/
+#info_wrapper {
+    position: relative;
+    max-width: 37em;
+    margin: 0 auto;
+}
+
+#info_wrapper img {
+    width: 100%;
+}
+
+.desc_wrapper {
+    position: relative;
+    max-width: 37em;
+    margin: 0 auto;
+}
+
+.desc_wrapper img {
+    width: 100%;
+}
+
+/* LOGIN */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.overlay:target {
+    display: block;
+}
+
+#login {
+    position: fixed;
+    width: 32%;
+    min-width: 600px;
+    height: 26%;
+    min-height: 320px;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #eeeeee;
+    z-index: 1000000;
+}
+
+.close_login {
+    position: absolute;
+    display: block;
+    right: 0;
+    margin: 1%;
+    color: black;
+}
+
+#login form {
+        padding: 10%;
+}
+
+
+/* FOOTER */
 footer {
     position: fixed;
     z-index: 10000;

@@ -8,6 +8,7 @@ var nav_bar;
 var header;
 var wrapper;
 var mq;
+var gl;
 
 var distance_to_add_class;
 
@@ -29,17 +30,54 @@ function init() {
     var scroll_list = document.getElementById("scroll_list");
     console.log("Scrolling distance available", scroll_list.scrollWidth - scroll_list.clientWidth);
 
-
+    initCanvas();
 
     // media query event handler
     if (matchMedia) {
-        var mq = window.matchMedia("only screen and (max-width: 767px)");
-        mq.addListener(WidthChange);
-        WidthChange(mq);
+        mq = window.matchMedia("only screen and (max-width: 767px)");
+        mq.addListener(widthChange);
+        widthChange(mq);
     }
 }
 
-function WidthChange(mq) {
+function initCanvas() {
+    var canvas = document.getElementById("logo_canvas");
+
+    // Initialize the GL context
+    gl = initWebGL(canvas);
+
+    // Only continue if WebGL is available and working
+    if (!gl) {
+        return;
+    }
+    canvas.width = welcome.offsetWidth;
+    console.log("Support canvas", canvas.offsetWidth);
+
+    // Set clear color to black, fully opaque
+    gl.clearColor(0.0, 0.0, 0.0, 0.0);
+    // Enable depth testing
+    gl.enable(gl.DEPTH_TEST);
+    // Near things obscure far things
+    gl.depthFunc(gl.LEQUAL);
+    // Clear the color as well as the depth buffer.
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+}
+
+function initWebGL(canvas) {
+    gl = null;
+
+    // Try to grab the standard context. If it fails, fallback to experimental.
+    gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+
+    // If we don't have a GL context, give up now
+    if (!gl) {
+        alert("Unable to initialize WebGL. Your browser may not support it.");
+    }
+
+    return gl;
+}
+
+function widthChange(mq) {
     if (mq.matches) {
         console.log("MOBILE");
 
