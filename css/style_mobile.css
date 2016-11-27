@@ -306,30 +306,30 @@ ul#all_events_wrapper {
     margin: 0;
 }
 
-ul#all_events_wrapper li {
+.all_events_list_item {
     display: block;
     height: 10%;
     width: 96%;
 }
 
-ul#all_events_wrapper li img {
+.all_events_list_item img {
     position: relative;
     width: 100%;
     height: 33vw;
 }
 
-ul#all_events_wrapper li .event_info {
+.all_events_list_item .event_info {
     position: relative;
     height: 30vw;
     width: 100%;
 }
 
-ul#all_events_wrapper li .event_info h3 {
+.all_events_list_item .event_info h3 {
     font-size: 6vw;
     margin: 5px;
 }
 
-ul#all_events_wrapper li .event_info p {
+.all_events_list_item .event_info p {
     font-size: 4vw;
     margin: 5px;
 }

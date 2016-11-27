@@ -488,7 +488,7 @@ ul#event_types {
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
-ul#all_events_wrapper li {
+.all_events_list_item {
     background: white;
     position: relative;
     display: flex;
@@ -499,23 +499,23 @@ ul#all_events_wrapper li {
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
-ul#all_events_wrapper li img {
+.all_events_list_item img {
     position: relative;
     width: 26%;
     height: 100%;
 }
 
-ul#all_events_wrapper li .event_info {
+.all_events_list_item .event_info {
     position: relative;
     height: 100%;
     width: 100%;
 }
 
-ul#all_events_wrapper li .event_info h3 {
+.all_events_list_item .event_info h3 {
     margin-left: 1%;
 }
 
-ul#all_events_wrapper li .event_info p {
+.all_events_list_item .event_info p {
     margin-left: 1%;
 }
 

@@ -1,0 +1,2 @@
+Najveèji problem povzroèa lastnost pointer-events, za katero pravi, da ne obstaja. https://developer.mozilla.org/en/docs/Web/CSS/pointer-events
+@supports: https://developer.mozilla.org/en/docs/Web/CSS/@supports
