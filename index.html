@@ -2,12 +2,16 @@
 <html lang="en">
 <link>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#db5945">
     <title>Events</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" media="only screen and (max-width: 767px)" href="css/style_mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" media="only screen and (max-width: 425px)" href="css/style_mobile.css">
+    <link rel="stylesheet" type="text/css" media="only screen and (min-width: 426px) and (max-width: 768px)" href="css/style_tablet.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 2400px)" href="css/style_retina.css" />
     <script src="scripts/main.js"></script>
+    <script src="scripts/validation.js"></script>
 </head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <body onload="init()">
         <div id="welcome">
             <div id="logo_wrapper">
@@ -29,23 +33,28 @@
                         <!--</ul>-->
                     </li>
                 </ul>
-                <div id="nav_menu">
-                    <div class="hamburger_icon_wrapper">
-                        <span class="hamburger_icon hamburger_icon_top"></span>
-                        <span class="hamburger_icon hamburger_icon_mid"></span>
-                        <span class="hamburger_icon hamburger_icon_bot"></span>
-                    </div>
-                    <ul>
-                        <li><a class="navigation_button_menu" href="all_events.html">All events</a></li>
-                        <li><a class="navigation_button_menu" href="add_event.html">Add event</a></li>
-                        <li><a class="navigation_button_menu" href="#login_form">Login</a></li>
-                    </ul>
-                </div>
-                <a class="navigation_button search_menu" href="search.html">Search</a>
             </div>
+            <ul class="nav-mobile check">
+                <li><a href="search.html">Search</a></li>
+                <li><a href="#login_form">Login</a>
+                <li class="menu-container">
+                    <input id="menu-toggle" type="checkbox">
+                    <label for="menu-toggle" class="menu-button">
+                        <svg class="icon-open" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+                        <svg class="icon-close" viewBox="0 0 100 100">
+                            <path d="M83.288 88.13c-2.114 2.112-5.575 2.112-7.69 0L53.66 66.188c-2.113-2.112-5.572-2.112-7.686 0l-21.72 21.72c-2.114 2.113-5.572 2.113-7.687 0l-4.693-4.692c-2.114-2.114-2.114-5.573 0-7.688l21.72-21.72c2.112-2.115 2.112-5.574 0-7.687L11.87 24.4c-2.114-2.113-2.114-5.57 0-7.686l4.842-4.842c2.113-2.114 5.57-2.114 7.686 0l21.72 21.72c2.114 2.113 5.572 2.113 7.688 0l21.72-21.72c2.115-2.114 5.574-2.114 7.688 0l4.695 4.695c2.112 2.113 2.112 5.57-.002 7.686l-21.72 21.72c-2.112 2.114-2.112 5.573 0 7.686L88.13 75.6c2.112 2.11 2.112 5.572 0 7.687l-4.842 4.84z"/>
+                        </svg>
+                    </label>
+                    <ul class="menu-sidebar">
+                        <li class="selected_sidebar_item"><a href=".">Home</a></li>
+                        <li><a href="all_events.html">All events</a></li>
+                        <li><a href="add_event.html">Add event</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
 
-        <div id="wrapper" class="extra_padding">
+        <div id="wrapper" class="index_padding">
             <div id="content">
                 <div class="info">
                     <h3>Welcome to <span style="color: #ee4b28;">NAME</span>!</h3>
@@ -170,6 +179,8 @@
             </div>
         </div>
 
+        <audio id="music"></audio>
+
         <div id="main_page_footer">
             <p>Made by: Nejc Povšič</p>
             <p>Course project</p>
@@ -178,14 +189,16 @@
 
         <div id="login_form" class="overlay">
             <div id="login">
-                <a href="#" class="close_login">Close</a>
-                <form>
+                <a href="#" id="close_button" class="close_login">X</a>
+                <div id="temp_login">
                     <label>Username</label>
                     <input id="username" class="input_class" type="text" name="username">
                     <label>Password</label>
                     <input id="password" class="input_class" type="password" name="password">
-                    <input type="submit" value="LOGIN" class="button form_button">
-                </form>
+                    <p id="login_error">Input fields cannot be empty.</p>
+                    <button class="button form_button" style="float: right;" onclick="validation()">LOGIN</button>
+                </div>
+                <a href="register.html" class="register_link">Don't have an account? Register here.</a>
             </div>
         </div>
     </body>

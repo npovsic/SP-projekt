@@ -63,7 +63,7 @@ h2 {
     padding-bottom: 2em;
 }
 
-.index_padding {
+.extra_padding {
     padding-bottom: 10em !important;
 }
 
@@ -151,16 +151,8 @@ h2 {
 }
 
 .navigation_button {
-    position: relative;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.8em;
-    color: white;
-    padding: 0 20px 0 20px;
-    white-space: nowrap;
-    transition: background-color 0.5s, border 0.5s, transform 1s;
+    font-size: 1.3em;
+
 }
 
 .search_menu {
@@ -215,6 +207,11 @@ h2 {
 }
 
 .info h3 {
+    font-size: 3em;
+}
+
+.info p {
+    font-size: 2em;
 }
 
 #video_wrapper {
@@ -379,7 +376,6 @@ video#meetup {
     right: 0;
     bottom: 0;
     margin: 10px;
-    padding: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -400,9 +396,9 @@ video#meetup {
 
 .event_button {
     position: absolute;
-    min-width: 60px;
-    min-height: 30px;
-    font-size: 0.9em;
+    min-width: 160px;
+    min-height: 50px;
+    font-size: 1.3em;
 }
 
 /* ALL EVENTS PAGE*/
@@ -425,8 +421,7 @@ video#meetup {
 
 /* SEARCH PAGE */
 .search_wrapper {
-    text-align: center;
-    margin-bottom: 1%;
+    font-size: 1.4em;
 }
 
 #search_input {
@@ -449,40 +444,6 @@ video#meetup {
     position: relative;
     width: 100%;
     height: 100%;
-    display: flex;
-}
-
-ul#search_results {
-    position: relative;
-    width: 50%;
-    min-width: 700px;
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-}
-
-ul#search_results li {
-    background: white;
-    position: relative;
-    display: flex;
-    width: 96%;
-    height: 11vw;
-    min-height: 175px;
-    margin: 2%;
-    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
-}
-
-ul#search_results li img {
-    position: relative;
-    width: 26%;
-    height: 100%;
-}
-
-ul#search_results li .event_info {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    margin-left: 1%;
 }
 
 /*ALL EVENTS PAGE*/
@@ -525,7 +486,7 @@ ul#all_events_wrapper {
     margin: 0 25% 0 25%;
 }
 
-#event_types {
+ul#event_types {
     position: relative;
     width: 96%;
     height: 4vw;
@@ -533,31 +494,7 @@ ul#all_events_wrapper {
     padding: 0;
     background: #ee4b28;
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    min-height: 40px;
 }
-
-#event_types p {
-    color: #fff;
-    margin: 0 2%;
-}
-
-#event_types button {
-    background: transparent;
-    margin: 0 2%;
-    padding: 1%;
-    color: #fff;
-    cursor: pointer;
-}
-
-.selected_filter_button {
-    box-shadow: inset 0 -2px 0 white;
-}
-
-/*#event_types button:after {*/
-    /*content: "^";*/
-/*}*/
 
 ul#all_events_wrapper li {
     background: white;
@@ -580,18 +517,24 @@ ul#all_events_wrapper li .event_info {
     position: relative;
     height: 100%;
     width: 100%;
+}
+
+ul#all_events_wrapper li .event_info h3 {
     margin-left: 1%;
+    font-size: 2em;
+}
+
+ul#all_events_wrapper li .event_info p {
+    margin-left: 1%;
+    font-size: 1.3em;
 }
 
 /* ADD EVENT PAGE*/
 form#add_event {
     position: relative;
-    max-width: 40em;
-    padding: 2%;
-    margin: 1% auto;
-    background: white;
-    color: #ee4b28;
-    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
+    max-width: 55em;
+    margin: 0 auto;
+    font-size: 1.3em;
 }
 
 .input_class {
@@ -614,9 +557,8 @@ form#add_event {
 input.form_button {
     margin: 1% 1% 1% auto;
     width: 10%;
-    min-width: 80px;
-    min-height: 40px;
-    font-size: 0.9em;
+    min-width: 60px;
+    min-height: 30px;
 }
 
 /* ACCOUNT PAGE*/
@@ -647,50 +589,22 @@ input.form_button {
 /* EVENT DETAILS PAGE*/
 #info_wrapper {
     position: relative;
-    max-width: 1000px;
-    margin: 0 0 0 4%;
-    padding: 1%;
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
-    background: #fff;
-}
-
-.event_details_h1 {
-    margin-left: 5% ;
+    max-width: 37em;
+    margin: 0 auto;
 }
 
 #info_wrapper img {
-    width: 48%;
-    max-height: 220px;
-    padding: 1%;
-}
-
-.event_details_wrapper {
-    position: relative;
-    width: 48%;
-    padding: 1%;
-}
-
-.event_description_wrapper {
     width: 100%;
-    margin: 1%;
-    padding: 1%;
-        border: 1px solid #eee;
-    border-radius: 5px;
 }
 
-#event_details_buttons_wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.event_details_button {
+.desc_wrapper {
     position: relative;
-    min-width: 60px;
-    min-height: 30px;
-    font-size: 0.9em;
+    max-width: 37em;
+    margin: 0 auto;
+}
+
+.desc_wrapper img {
+    width: 100%;
 }
 
 /* LOGIN */
@@ -727,39 +641,18 @@ input.form_button {
     position: absolute;
     display: block;
     right: 0;
-    margin: 2%;
+    margin: 1%;
     color: black;
 }
 
 #login form {
-    padding: 10%;
-}
-
-#temp_login {
-    padding: 10%;
-}
-
-#login_error {
-    display: none;
-    position: absolute;
-    color: red;
-}
-
-.register_link {
-    color: #555;
-    padding-left: 10%;
-    width: 100%;
+        padding: 10%;
 }
 
 
 /* FOOTER */
 #main_page_footer {
-    width: 100%;
-    height: 10em;
-    z-index: 100;
-    position: relative;
-    border-top: 2px solid #ddd;
-    text-align: center;
+font-size: 1.5em;
 }
 
 footer {
@@ -770,8 +663,4 @@ footer {
     bottom: 0;
     border-top: 2px solid #ddd;
     background: #f5f7f9;
-}
-
-footer p {
-    margin: 5px;
 }

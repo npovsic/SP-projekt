@@ -10,17 +10,34 @@ var wrapper;
 var mq;
 var gl;
 
+var scrolling_distance;
+var distance = 200;
+
 var distance_to_add_class;
 
+var konami = [
+    38,
+    38,
+    40,
+    40,
+    37,
+    39,
+    37,
+    39,
+    66,
+    65
+];
+
+var key_buffer = [];
+
 function init() {
-    console.log("Hello world!");
+    console.log("It's not safe here, go back!");
 
     welcome = document.getElementById("welcome");
     header = document.getElementById("header");
     wrapper = document.getElementById("wrapper");
 
     nav_bar = document.getElementById("nav_bar");
-    console.log("Navigation button wrapper", nav_bar.offsetTop);
 
     distance_to_add_class = nav_bar.offsetTop;
 
@@ -28,13 +45,13 @@ function init() {
     button_forward = document.getElementById("button_forward");
 
     var scroll_list = document.getElementById("scroll_list");
-    console.log("Scrolling distance available", scroll_list.scrollWidth - scroll_list.clientWidth);
+    scrolling_distance = scroll_list.scrollWidth - scroll_list.clientWidth;
 
     initCanvas();
 
     // media query event handler
     if (matchMedia) {
-        mq = window.matchMedia("only screen and (max-width: 767px)");
+        mq = window.matchMedia("only screen and (max-width: 425px)");
         mq.addListener(widthChange);
         widthChange(mq);
     }
@@ -43,35 +60,26 @@ function init() {
 function initCanvas() {
     var canvas = document.getElementById("logo_canvas");
 
-    // Initialize the GL context
     gl = initWebGL(canvas);
 
-    // Only continue if WebGL is available and working
     if (!gl) {
         return;
     }
     canvas.width = welcome.offsetWidth;
-    console.log("Support canvas", canvas.offsetWidth);
 
-    // Set clear color to black, fully opaque
     gl.clearColor(0.0, 0.0, 0.0, 0.0);
-    // Enable depth testing
     gl.enable(gl.DEPTH_TEST);
-    // Near things obscure far things
     gl.depthFunc(gl.LEQUAL);
-    // Clear the color as well as the depth buffer.
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 }
 
 function initWebGL(canvas) {
     gl = null;
 
-    // Try to grab the standard context. If it fails, fallback to experimental.
     gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
 
-    // If we don't have a GL context, give up now
     if (!gl) {
-        alert("Unable to initialize WebGL. Your browser may not support it.");
+        console.log("Unable to initialize WebGL. Your browser may not support it.");
     }
 
     return gl;
@@ -79,84 +87,80 @@ function initWebGL(canvas) {
 
 function widthChange(mq) {
     if (mq.matches) {
-        console.log("MOBILE");
-
         window.onresize = function(event) {
             //do nothing
         };
     } else {
-        console.log("DESKTOP");
         button_back.addEventListener("click", function() {
-            scroll(scroll_list, 500, "left");
+            scroll(scroll_list, "left");
         });
         button_forward.addEventListener("click", function() {
-            scroll(scroll_list, 500, "right");
+            scroll(scroll_list, "right");
         });
         window.addEventListener("scroll", scrollListener);
 
         window.onresize = function(event) {
-            console.log("CHANGED WIDTH");
+            var scroll_list = document.getElementById("scroll_list");
             distance_to_add_class = nav_bar.offsetTop;
+            scrolling_distance = scroll_list.scrollWidth - scroll_list.clientWidth;
         };
     }
 }
 
-function scroll(element, distance, direction) {
-    if(distance <= 0) {
-        console.log(element.scrollLeft);
-        if(element.scrollLeft == 0) {
-            button_back.style.display = "none";
-        } else {
-            button_back.style.display = "block";
-        }
-
-        if(element.scrollWidth - element.clientWidth <= element.scrollLeft) {
-            button_forward.style.display = "none";
-        } else {
-            button_forward.style.display = "block";
-        }
-    } else {
-        if(direction == "left") {
-            element.scrollLeft-=100;
-            setTimeout(function() {
-                scroll(element, distance-100, direction);
-            }, 50);
-        } else {
-            element.scrollLeft+=100;
-            setTimeout(function() {
-                scroll(element, distance-100, direction);
-            }, 50);
-        }
+function scroll(element, direction) {
+    if(direction == "left") {
+        element.style.transform = "translate3d(0px,0,0)";
+        distance = 0;
+        button_back.style.display = "none";
+        button_forward.style.display = "block";
+    }
+    else {
+        element.style.transform = "translate3d(-"+scrolling_distance+"px,0,0)";
+        button_back.style.display = "block";
+        button_forward.style.display = "none";
     }
 }
 
-
-
 window.addEventListener('keydown', function (event) {
-    console.log(event.keyCode);
+    key_buffer.push(event.keyCode);
+
+    if(key_buffer[key_buffer.length-1] == konami[key_buffer.length-1]) {
+        if (key_buffer.length == konami.length) {
+            var audio = document.querySelector("audio");
+            audio.src = "css/assets/audio.mp3";
+            audio.loop = true;
+            audio.play();
+
+            var elements = document.querySelectorAll('link[rel=stylesheet]');
+            for (var i = 0; i < elements.length; i++){
+                elements[i].parentNode.removeChild(elements[i]);
+            }
+            document.body.style.backgroundImage = "url(css/assets/bg_stars.gif)";
+
+            var textnode = document.createTextNode("Oops, looks like you disabled all CSS stylesheets, good luck finding anything now!");
+            welcome.style.color = "#fff";
+            welcome.style.fontSize = "3em";
+            welcome.style.textAlign = "center";
+            welcome.insertBefore(textnode, welcome.childNodes[0]);
+        }
+    }
+    else {
+        key_buffer = [];
+    }
 });
 
 function scrollListener(e) {
-    //console.log("Scrolling", e);
-    console.log(wrapper.scrollTop,  nav_bar.offsetTop);
     if(window.scrollY > distance_to_add_class) {
-        console.log("Add class");
-        nav_bar.classList.remove("not_fixed");
-        nav_bar.classList.add("fixed");
+        if(!nav_bar.classList.contains("fixed")) {
+            console.log("Add class");
+            nav_bar.classList.remove("not_fixed");
+            nav_bar.classList.add("fixed");
+        }
     } else {
-        nav_bar.classList.remove("fixed");
-        nav_bar.classList.add("not_fixed");
+        if(nav_bar.classList.contains("fixed")) {
+            console.log("Remove class");
+            nav_bar.classList.remove("fixed");
+            nav_bar.classList.add("not_fixed");
+        }
     }
 }
-
-//.item{
-//    top : 0%;
-//    position : absolute;
-//    width: 200px;
-//    height : 200px;
-//    transition : transform 0.15s linear, opacity 0.15s;
-//    -webkit-transition : -webkit-transform 0.15s linear, opacity 0.15s
-//}
-//var item = document.getElementById("item");
-//item.style.transform = "translate3d(210px,0,0)";
-//item.style.webkitTransform = "translate3d(210px,0,0)";

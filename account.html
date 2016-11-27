@@ -2,11 +2,14 @@
 <html lang="en">
 <link>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#db5945">
     <title>Events</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" media="only screen and (max-width: 767px)" href="css/style_mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" media="only screen and (max-width: 425px)" href="css/style_mobile.css">
+    <link rel="stylesheet" type="text/css" media="only screen and (min-width: 426px) and (max-width: 768px)" href="css/style_tablet.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 2400px)" href="css/style_retina.css" />
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <body>
         <div id="nav_bar" class="fixed">
             <ul id="navigation_buttons_wrapper">
@@ -17,18 +20,28 @@
                 <li class="search"><a class="navigation_button" href="search.html">Search</a></li>
                 <li><a class="navigation_button selected" href="#login_form">Login</a></li>
             </ul>
-            <div id="nav_menu">
-                <ul>
-                    <li><a class="navigation_button_menu" href="all_events.html">All events</a></li>
-                    <li><a class="navigation_button_menu" href="add_event.html">Add event</a></li>
-                    <li><a class="navigation_button_menu" href="#login_form">Login</a></li>
-                </ul>
-
-                <a class="navigation_button search_menu" href="search.html">Search</a>
-            </div>
         </div>
+        <ul class="nav-mobile check">
+            <li><a href="search.html">Search</a></li>
+            <li class="menu-container">
+                <input id="menu-toggle" type="checkbox">
+                <label for="menu-toggle" class="menu-button">
+                    <svg class="icon-open" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+                    <svg class="icon-close" viewBox="0 0 100 100">
+                        <path d="M83.288 88.13c-2.114 2.112-5.575 2.112-7.69 0L53.66 66.188c-2.113-2.112-5.572-2.112-7.686 0l-21.72 21.72c-2.114 2.113-5.572 2.113-7.687 0l-4.693-4.692c-2.114-2.114-2.114-5.573 0-7.688l21.72-21.72c2.112-2.115 2.112-5.574 0-7.687L11.87 24.4c-2.114-2.113-2.114-5.57 0-7.686l4.842-4.842c2.113-2.114 5.57-2.114 7.686 0l21.72 21.72c2.114 2.113 5.572 2.113 7.688 0l21.72-21.72c2.115-2.114 5.574-2.114 7.688 0l4.695 4.695c2.112 2.113 2.112 5.57-.002 7.686l-21.72 21.72c-2.112 2.114-2.112 5.573 0 7.686L88.13 75.6c2.112 2.11 2.112 5.572 0 7.687l-4.842 4.84z"/>
+                    </svg>
+                </label>
+                <ul class="menu-sidebar">
+                    <li><a href=".">Home</a></li>
+                    <li><a href="all_events.html">All events</a></li>
+                    <li><a href="add_event.html">Add event</a></li>
+                    <li><a href="#login_form">Login</a>
+                </ul>
+            </li>
+        </ul>
+
         <div class="nav_bar_padding"></div>
-        <div id="wrapper">
+        <div id="wrapper" class="extra_padding">
             <div id="content">
                 <ul id="options_menu">
                     <li><a href="#login_form">Login details</a></li>

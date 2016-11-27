@@ -16,7 +16,7 @@
             <ul id="navigation_buttons_wrapper">
                 <li><a class="navigation_button" href=".">Home</a></li>
                 <li><a class="navigation_button" href="all_events.html">All events</a></li>
-                <li><a class="navigation_button" href="add_event.html">Add event</a></li>
+                <li><a class="navigation_button selected" href="add_event.html">Add event</a></li>
 
                 <li class="search"><a class="navigation_button" href="search.html">Search</a></li>
                 <li><a class="navigation_button" href="#login_form">Login</a></li>
@@ -36,35 +36,30 @@
                 <ul class="menu-sidebar">
                     <li><a href=".">Home</a></li>
                     <li><a href="all_events.html">All events</a></li>
-                    <li><a href="add_event.html">Add event</a></li>
+                    <li class="selected_sidebar_item"><a href="add_event.html">Add event</a></li>
                 </ul>
             </li>
         </ul>
 
+
         <div class="nav_bar_padding"></div>
         <div id="wrapper" class="extra_padding">
             <div id="content">
-                <h1 class="event_details_h1">Event details</h1>
-                <div id="info_wrapper">
-                    <img src="css/assets/img-showcase.jpg"/>
-                    <div class="event_details_wrapper">
-                        <h1>NAME</h1>
-                        <h3>DATE</h3>
-                        <h3>LOCATION</h3>
-                        <h3>CREATOR</h3>
-                    </div>
-                    <div class="event_description_wrapper">
-                        <p>Description</p>
-                        <p>Description</p>
-                        <p>Description</p>
-                        <p>Description</p>
-                        <p>Description</p>
-                        <p>Description</p>
-                    </div>
-                    <div id="event_details_buttons_wrapper">
-                        <a class="button event_details_button" href="event_details.html">I'm going</a>
-                    </div>
-                </div>
+                <form id="add_event">
+                    <h3>Profile picture</h3>
+                    <input type="file" name="pic" accept="image/*">
+                    <h3>Real name</h3>
+                    <input id="register_name" class="input_class" type="text" name="event_name">
+                    <h3>E-mail</h3>
+                    <input id="register_mail" class="input_class" type="text" name="event_date">
+                    <h3>Username</h3>
+                    <input id="register_username" class="input_class" type="text" name="event_date">
+                    <h3>Password</h3>
+                    <input id="register_password" class="input_class" type="password" name="event_location">
+                    <h3>City</h3>
+                    <input id="register_city" class="input_class" type="text" name="event_location">
+                    <input type="submit" value="REGISTER" class="button form_button">
+                </form>
             </div>
             <div class="push"></div>
         </div>
@@ -76,14 +71,13 @@
         <div id="login_form" class="overlay">
             <div id="login">
                 <a href="#" id="close_button" class="close_login">X</a>
-                <div id="temp_login">
+                <form>
                     <label>Username</label>
                     <input id="username" class="input_class" type="text" name="username">
                     <label>Password</label>
                     <input id="password" class="input_class" type="password" name="password">
-                    <button class="button form_button" style="float: right;" onclick="console.log('Pressed')">LOGIN</button>
-                </div>
-                <a href="register.html" class="register_link">Don't have an account? Register here.</a>
+                    <input type="submit" value="LOGIN" class="button form_button">
+                </form>
             </div>
         </div>
     </body>

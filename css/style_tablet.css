@@ -45,7 +45,7 @@ a {
 
 h2 {
     margin: 2% 2% 1% 2%;
-    font-size: 2vw;
+    font-size: 1.5em;
 }
 
 .nav_bar_padding {
@@ -58,12 +58,11 @@ h2 {
     min-height: 100%;
     width: 100%;
     z-index: 20;
-    background: #f5f7f9;
     margin: 0 auto -8em;
     padding-bottom: 2em;
 }
 
-.index_padding {
+.extra_padding {
     padding-bottom: 10em !important;
 }
 
@@ -156,7 +155,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.8em;
+    font-size: 0.6em;
     color: white;
     padding: 0 20px 0 20px;
     white-space: nowrap;
@@ -379,7 +378,6 @@ video#meetup {
     right: 0;
     bottom: 0;
     margin: 10px;
-    padding: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -449,51 +447,11 @@ video#meetup {
     position: relative;
     width: 100%;
     height: 100%;
-    display: flex;
-}
-
-ul#search_results {
-    position: relative;
-    width: 50%;
-    min-width: 700px;
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-}
-
-ul#search_results li {
-    background: white;
-    position: relative;
-    display: flex;
-    width: 96%;
-    height: 11vw;
-    min-height: 175px;
-    margin: 2%;
-    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
-}
-
-ul#search_results li img {
-    position: relative;
-    width: 26%;
-    height: 100%;
-}
-
-ul#search_results li .event_info {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    margin-left: 1%;
 }
 
 /*ALL EVENTS PAGE*/
 ul#options_menu {
-    position: fixed;
-    width: 15vw;
-    height: 30vw;
-    margin-left: 2%;
-    padding: 0;
-    list-style: none;
-    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
+    display: none;
 }
 
 ul#options_menu li {
@@ -517,15 +475,10 @@ ul#options_menu li:hover a {
 }
 
 ul#all_events_wrapper {
-    position: relative;
-    width: 100%;
-    min-width: 700px;
-    list-style: none;
-    padding: 0;
-    margin: 0 25% 0 25%;
+    margin: 0;
 }
 
-#event_types {
+ul#event_types {
     position: relative;
     width: 96%;
     height: 4vw;
@@ -533,31 +486,7 @@ ul#all_events_wrapper {
     padding: 0;
     background: #ee4b28;
     box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    min-height: 40px;
 }
-
-#event_types p {
-    color: #fff;
-    margin: 0 2%;
-}
-
-#event_types button {
-    background: transparent;
-    margin: 0 2%;
-    padding: 1%;
-    color: #fff;
-    cursor: pointer;
-}
-
-.selected_filter_button {
-    box-shadow: inset 0 -2px 0 white;
-}
-
-/*#event_types button:after {*/
-    /*content: "^";*/
-/*}*/
 
 ul#all_events_wrapper li {
     background: white;
@@ -580,18 +509,21 @@ ul#all_events_wrapper li .event_info {
     position: relative;
     height: 100%;
     width: 100%;
+}
+
+ul#all_events_wrapper li .event_info h3 {
+    margin-left: 1%;
+}
+
+ul#all_events_wrapper li .event_info p {
     margin-left: 1%;
 }
 
 /* ADD EVENT PAGE*/
 form#add_event {
     position: relative;
-    max-width: 40em;
-    padding: 2%;
-    margin: 1% auto;
-    background: white;
-    color: #ee4b28;
-    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
+    max-width: 37em;
+    margin: 0 auto;
 }
 
 .input_class {
@@ -647,50 +579,22 @@ input.form_button {
 /* EVENT DETAILS PAGE*/
 #info_wrapper {
     position: relative;
-    max-width: 1000px;
-    margin: 0 0 0 4%;
-    padding: 1%;
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: 0 6px 7px 0 rgba(0, 0, 0, 0.2);
-    background: #fff;
-}
-
-.event_details_h1 {
-    margin-left: 5% ;
+    max-width: 37em;
+    margin: 0 auto;
 }
 
 #info_wrapper img {
-    width: 48%;
-    max-height: 220px;
-    padding: 1%;
-}
-
-.event_details_wrapper {
-    position: relative;
-    width: 48%;
-    padding: 1%;
-}
-
-.event_description_wrapper {
     width: 100%;
-    margin: 1%;
-    padding: 1%;
-        border: 1px solid #eee;
-    border-radius: 5px;
 }
 
-#event_details_buttons_wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.event_details_button {
+.desc_wrapper {
     position: relative;
-    min-width: 60px;
-    min-height: 30px;
-    font-size: 0.9em;
+    max-width: 37em;
+    margin: 0 auto;
+}
+
+.desc_wrapper img {
+    width: 100%;
 }
 
 /* LOGIN */
@@ -727,28 +631,12 @@ input.form_button {
     position: absolute;
     display: block;
     right: 0;
-    margin: 2%;
+    margin: 1%;
     color: black;
 }
 
 #login form {
-    padding: 10%;
-}
-
-#temp_login {
-    padding: 10%;
-}
-
-#login_error {
-    display: none;
-    position: absolute;
-    color: red;
-}
-
-.register_link {
-    color: #555;
-    padding-left: 10%;
-    width: 100%;
+        padding: 10%;
 }
 
 
@@ -770,8 +658,4 @@ footer {
     bottom: 0;
     border-top: 2px solid #ddd;
     background: #f5f7f9;
-}
-
-footer p {
-    margin: 5px;
 }
