@@ -1,0 +1,7 @@
+https://npovsic.github.io/SP-projekt/
+https://npovsic.github.io/SP-projekt/all_events.html
+https://npovsic.github.io/SP-projekt/add_event.html
+https://npovsic.github.io/SP-projekt/search.html
+https://npovsic.github.io/SP-projekt/event_details.html
+https://npovsic.github.io/SP-projekt/register.html
+https://npovsic.github.io/SP-projekt/all_events_map.html

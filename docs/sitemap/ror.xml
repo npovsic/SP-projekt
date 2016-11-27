@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://npovsic.github.io/SP-projekt/</title>
+  <link>https://npovsic.github.io/SP-projekt/</link>
+
+<item>
+     <link>https://npovsic.github.io/SP-projekt/</link>
+     <title>Events</title>
+     <description>Events</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://npovsic.github.io/SP-projekt/all_events.html</link>
+     <title>Events</title>
+     <description>Events</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://npovsic.github.io/SP-projekt/add_event.html</link>
+     <title>Events</title>
+     <description>Events</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://npovsic.github.io/SP-projekt/search.html</link>
+     <title>Events</title>
+     <description>Events</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://npovsic.github.io/SP-projekt/event_details.html</link>
+     <title>Events</title>
+     <description>Events</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://npovsic.github.io/SP-projekt/register.html</link>
+     <title>Events</title>
+     <description>Events</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://npovsic.github.io/SP-projekt/all_events_map.html</link>
+     <title>Events</title>
+     <description>Events</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  

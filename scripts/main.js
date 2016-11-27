@@ -7,6 +7,8 @@ var welcome;
 var nav_bar;
 var header;
 var wrapper;
+var scroll_list;
+var scroll_list_display;
 var mq;
 var gl;
 
@@ -44,10 +46,12 @@ function init() {
     button_back = document.getElementById("button_back");
     button_forward = document.getElementById("button_forward");
 
-    var scroll_list = document.getElementById("scroll_list");
+    scroll_list = document.getElementById("scroll_list");
     scrolling_distance = scroll_list.scrollWidth - scroll_list.clientWidth;
 
     initCanvas();
+
+    scroll_list_display = getStyle("scroll_list", "display");
 
     // media query event handler
     if (matchMedia) {
@@ -55,6 +59,12 @@ function init() {
         mq.addListener(widthChange);
         widthChange(mq);
     }
+}
+
+function getStyle(id, name)
+{
+    var element = document.getElementById(id);
+    return element.currentStyle ? element.currentStyle[name] : window.getComputedStyle ? window.getComputedStyle(element, null).getPropertyValue(name) : null;
 }
 
 function initCanvas() {
@@ -91,12 +101,19 @@ function widthChange(mq) {
             //do nothing
         };
     } else {
-        button_back.addEventListener("click", function() {
-            scroll(scroll_list, "left");
-        });
-        button_forward.addEventListener("click", function() {
-            scroll(scroll_list, "right");
-        });
+        console.log();
+        if (scroll_list_display != "flex") {
+            button_back.addEventListener("click", function() {
+                scroll(scroll_list, "left");
+            });
+            button_forward.addEventListener("click", function() {
+                scroll(scroll_list, "right");
+            });
+        }
+        else {
+            button_forward.style.display = "none";
+        }
+
         window.addEventListener("scroll", scrollListener);
 
         window.onresize = function(event) {

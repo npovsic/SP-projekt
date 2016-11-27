@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://npovsic.github.io/SP-projekt/</loc>
+  <lastmod>2016-11-27T20:11:55+00:00</lastmod>
+</url>
+<url>
+  <loc>https://npovsic.github.io/SP-projekt/all_events.html</loc>
+  <lastmod>2016-11-27T20:11:54+00:00</lastmod>
+</url>
+<url>
+  <loc>https://npovsic.github.io/SP-projekt/add_event.html</loc>
+  <lastmod>2016-11-27T20:11:54+00:00</lastmod>
+</url>
+<url>
+  <loc>https://npovsic.github.io/SP-projekt/search.html</loc>
+  <lastmod>2016-11-27T20:11:55+00:00</lastmod>
+</url>
+<url>
+  <loc>https://npovsic.github.io/SP-projekt/event_details.html</loc>
+  <lastmod>2016-11-27T20:11:55+00:00</lastmod>
+</url>
+<url>
+  <loc>https://npovsic.github.io/SP-projekt/register.html</loc>
+  <lastmod>2016-11-27T20:11:55+00:00</lastmod>
+</url>
+<url>
+  <loc>https://npovsic.github.io/SP-projekt/all_events_map.html</loc>
+  <lastmod>2016-11-27T20:11:54+00:00</lastmod>
+</url>
+</urlset>
